@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm
@@ -18,3 +19,7 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
+
+
+def hello(request):
+    return HttpResponse('Hello world')
