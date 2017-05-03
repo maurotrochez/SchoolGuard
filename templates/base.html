@@ -1,10 +1,36 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{% block head_title %}{% endblock %}</title>
+
+    {% include "head_css.html" %}
 </head>
+
 <body>
-<h1>WELCOME</h1>
+
+<!-- Static navbar -->
+{% include  "navbar.html" %}
+
+
+<div class="container">
+    <div class="jumbotron">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+</div> <!-- /container -->
+
+
+{% include "foot_javascript.html" %}
 </body>
 </html>

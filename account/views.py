@@ -15,11 +15,16 @@ def register(request):
             new_user.save()
 
             # return render(request, 'account/register_done.html', {'new_user': new_user})
-            return render(request, 'base.html', {'new_user': new_user})
+            return render(request, 'account/list.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
 
 
-def hello(request):
-    return HttpResponse('Hello world')
+def list_users(request):
+    list_users = User.objects.all()
+    return render(request, 'account/list.html', context={'data': list_users})
+
+
+def home(request):
+    return render(request, 'home.html', context={'a': 1})
