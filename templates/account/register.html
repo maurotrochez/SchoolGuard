@@ -5,6 +5,6 @@
     <form action="" method="post">
        {{ user_form|crispy }}
         {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
+        <p><input type="submit" class="btn btn-primary" value="Create my account"></p>
     </form>
 {% endblock %}

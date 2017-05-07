@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'account.MyUser'
 
 # Application definition
 
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     # third's app
     'crispy_forms',
     # my apps
-    'account.apps.AccountConfig',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +92,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -133,3 +133,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_pro', 'static')
 ]
+
