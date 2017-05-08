@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head_title %}
+Conductores
+{% endblock %}
+{% block content %}
+
+    {% if data %}
+    {% for c in data %}
+        <li>{{ c.nombre }}</li>
+    {% endfor %}
+
+    {% else %}
+    <h4>No hay registros de conductores</h4>
+    {% endif %}
+	<hr>
+    <p>
+        <a href="{% url "create_conductor" %}" class="btn btn-primary">Create new conductor</a>
+    </p>
+{% endblock %}

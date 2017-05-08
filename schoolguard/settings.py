@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     # my apps
     'account',
-    'geo'
+    'geo',
+    'conductor',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'schoolguard',
         'USER': 'root',
-        'PASSWORD': '12345',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '3306'
     }
