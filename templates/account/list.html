@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+{% block head_title %}
+Users
+{% endblock %}
 {% block content %}
-
+    <h3>Users</h3>
     {% for u in data %}
-        <li>{{ u.username }}</li>
+        <a>{{ u.username }}</a>
+        <br>
     {% endfor %}
     {% if new_user %}
-        <li>{{ new_user.username }}</li>
+        <a>{{ new_user.username }}</a>
     {% endif %}
     <hr>
     <p>

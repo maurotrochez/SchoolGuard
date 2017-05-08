@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     # my apps
     'account',
+    'geo'
 ]
 
 MIDDLEWARE = [
@@ -133,4 +134,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_pro', 'static')
 ]
+
+GOOGLE_MAP_API_KEY = "AIzaSyDMdeTRYdZ-q3-Q8JyHEw8wrV8rbGQZuBE"
 

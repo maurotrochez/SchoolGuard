@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^account/', include('account.urls'), name='account'),
+    url(r'^geo/', include('geo.urls'), name='geo'),
     # url(r'^account/hello', hello, name='hello'),
 ]
 
