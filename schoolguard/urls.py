@@ -27,6 +27,7 @@ urlpatterns = [
     # url(r'^account/hello', hello, name='hello'),
     url(r'^conductor/', include('conductor.urls'), name='conductor'),
     url(r'^colegio/', include('colegio.urls'), name='colegio'),
+    url(r'^estudiante/', include('estudiante.urls'), name='estudiante'),
 ]
 
 if settings.DEBUG:

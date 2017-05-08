@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block head_title %}
-Create school
+Create student
 {% endblock %}
 {% block content %}
-    <h3>Create a colegio</h3>
+    <h3>Create a student</h3>
     <form action="" method="post">
-       {{ colegio_form|crispy }}
+       {{ estudiante_form|crispy }}
         {% csrf_token %}
         <p><input type="submit" class="btn btn-primary" value="Save"></p>
     </form>

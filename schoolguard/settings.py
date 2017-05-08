@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'geo',
     'conductor',
     'colegio',
+    'estudiante',
 ]
 
 MIDDLEWARE = [

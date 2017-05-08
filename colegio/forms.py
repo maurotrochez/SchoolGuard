@@ -8,11 +8,7 @@ class ColegioForm(forms.ModelForm):
         model = Colegio
 
         fields = [
-            'idColegio',
             'nombre',
             'direccion',
             'nit',
         ]
-        labels = {
-            'idColegio': 'Numero Colegio',
-        }
