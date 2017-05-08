@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^geo/', include('geo.urls'), name='geo'),
     # url(r'^account/hello', hello, name='hello'),
     url(r'^conductor/', include('conductor.urls'), name='conductor'),
+    url(r'^colegio/', include('colegio.urls'), name='colegio'),
 ]
 
 if settings.DEBUG:

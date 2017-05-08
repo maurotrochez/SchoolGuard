@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head_title %}
+Colegios
+{% endblock %}
+{% block content %}
+
+    {% if data %}
+    {% for c in data %}
+        <li>{{ c.nombre }}</li>
+    {% endfor %}
+
+    {% else %}
+    <h4>No hay registros de colegios</h4>
+    {% endif %}
+	<hr>
+    <p>
+        <a href="{% url "create_colegio" %}" class="btn btn-primary">Create new colegio</a>
+    </p>
+{% endblock %}
