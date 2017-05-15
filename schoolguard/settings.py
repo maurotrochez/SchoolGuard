@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'conductor',
     'colegio',
     'estudiante',
+    'vehiculo',
+    'documentosVehiculo',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'schoolguard',
         'USER': 'root',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'MatiVelasquez0922',
         'HOST': 'localhost',
         'PORT': '3306'
     }

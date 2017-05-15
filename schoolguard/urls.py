@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^conductor/', include('conductor.urls'), name='conductor'),
     url(r'^colegio/', include('colegio.urls'), name='colegio'),
     url(r'^estudiante/', include('estudiante.urls'), name='estudiante'),
+    url(r'^vehiculo/', include('vehiculo.urls'), name='vehiculo'),
+    url(r'^documentosVehiculo/', include('documentosVehiculo.urls'), name='documentosVehiculo'),
 ]
 
 if settings.DEBUG:

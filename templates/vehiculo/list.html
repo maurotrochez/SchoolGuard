@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block head_title %}
-Estudiantes
+Vehiculo
 {% endblock %}
 {% block content %}
 
     {% if data %}
     {% for c in data %}
-        <li>{{ c.nombre }}</li>
+        <li>{{ c.placa }}</li>
     {% endfor %}
 
     {% else %}
-    <h4>No hay registros de estudiantes</h4>
+    <h4>No hay registros de vehiculo</h4>
     {% endif %}
 	<hr>
     <p>
-        <a href="{% url "create_estudiante" %}" class="btn btn-primary">Create new students</a>
+        <a href="{% url "create_vehiculo" %}" class="btn btn-primary">Create new student</a>
     </p>
 {% endblock %}
