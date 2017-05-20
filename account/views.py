@@ -31,5 +31,31 @@ def list_users(request):
     return render(request, 'account/list.html', context={'data': list_users})
 
 
+def user_edit(request, id_user):
+    user = User.objects.get(id=id_user)
+    if request.method == 'GET':
+        form = UserRegistrationForm(instance=user)
+    else:
+        form = UserRegistrationForm(request.POST, instance=user)
+        if form.is_valid():
+            # new_user = form.save(commit=False)
+            # new_user.set_password(form.cleaned_data['password'])
+            form.save()
+            messages.success(request, 'User updated successfully')
+
+            # return render(request, 'account/register_done.html', {'new_user': new_user})
+            # return render(request, 'account/list.html', {'new_user': new_user})
+            return redirect("list_users")
+    return render(request, 'account/register.html', {'user_form': form})
+
+
+def user_delete(request, id_user):
+    user = User.objects.get(id=id_user)
+    if request.method == 'POST':
+        user.delete()
+        return redirect("list_users")
+    return render(request, 'account/delete.html', {'user': user})
+
+
 def home(request):
     return render(request, 'home.html', context={'a': 1})

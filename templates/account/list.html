@@ -3,16 +3,40 @@
 Users
 {% endblock %}
 {% block content %}
-    <h3>Users</h3>
-    {% for u in data %}
-        <a>{{ u.username }}</a>
-        <br>
-    {% endfor %}
-    {% if new_user %}
-        <a>{{ new_user.username }}</a>
-    {% endif %}
+    <h3>Usuarios</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <td>#</td>
+            <td>Username</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Email</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+    <tbody>
+        {% if data %}
+        {% for u in data%}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.username }}</td>
+                <td>{{ u.first_name }}</td>
+                <td>{{ u.last_name }}</td>
+                <td>{{ u.email }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'user_edit' u.id %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'user_delete' u.id %}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <h1>No hay registros de usuarios</h1>
+        {% endif %}
+    </tbody>
+    </table>
     <hr>
     <p>
-        <a href="{% url "register" %}" class="btn btn-primary">Create new user</a>
+        <a href="{% url "register" %}" class="btn btn-primary">Crear nuevo usuario</a>
     </p>
 {% endblock %}

@@ -1,4 +1,9 @@
 from django import forms
+from django.forms import DateInput
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout
+from crispy_forms.bootstrap import (PrependedText, PrependedAppendedText, FormActions)
+
 from .models import DocumentosVehiculo
 
 # Create the form class.
@@ -19,3 +24,10 @@ class DocumentosVehiculoForm(forms.ModelForm):
             'fechaExpedicion': 'fecha de expedición',
             'fechaVencimiento': 'fecha de vencimiento',
         }
+        # widgets = {
+        #     'fechaExpedicion': forms.DateTimeInput(attrs={'class': 'datetime-input'}),
+        #     'fechaVencimiento': DateInput(attrs={
+        #         'class': 'datepicker',
+        #         'data-date-format': 'yyyy/mm/dd',
+        #     }),
+        # }

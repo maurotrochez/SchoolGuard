@@ -4,10 +4,10 @@ Register
 {% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h3>Create an account</h3>
+    <h3>Crear usuario</h3>
     <form action="" method="post">
        {{ user_form|crispy }}
         {% csrf_token %}
-        <p><input type="submit" class="btn btn-primary" value="Save"></p>
+        <p><input type="submit" class="btn btn-primary" value="Guardar"></p>
     </form>
 {% endblock %}

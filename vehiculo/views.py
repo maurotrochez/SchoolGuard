@@ -17,7 +17,7 @@ def create_vehiculo(request):
         if vehiculo_form.is_valid():
             vehiculo_form.save()
             messages.success(request, 'Vehiculo created successfully')
-            return redirect('list_vehiculos')
+            return redirect('list_vehiculo')
     else:
         vehiculo_form = VehiculoForm()
     return render(request, 'vehiculo/create.html', {'vehiculo_form': vehiculo_form})
