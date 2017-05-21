@@ -5,15 +5,36 @@ Estudiantes
 {% block content %}
 
     {% if data %}
-    {% for c in data %}
-        <li>{{ c.nombre }}</li>
-    {% endfor %}
-
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Teléfono</td>
+                <td>Colegio</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+                <tr>
+                    <td>{{ d.idEstudiante }}</td>
+                    <td>{{ d.nombre }}</td>
+                    <td>{{ d.telefono }}</td>
+                    <td>{{ d.colegio }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'estudiante_edit' d.idEstudiante %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'estudiante_delete' d.idEstudiante %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     {% else %}
     <h4>No hay registros de estudiantes</h4>
     {% endif %}
 	<hr>
     <p>
-        <a href="{% url "create_estudiante" %}" class="btn btn-primary">Create new students</a>
+        <a href="{% url "create_estudiante" %}" class="btn btn-primary">Create new student</a>
     </p>
 {% endblock %}
