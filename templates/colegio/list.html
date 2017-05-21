@@ -5,10 +5,31 @@ Colegios
 {% block content %}
 
     {% if data %}
-    {% for c in data %}
-        <li>{{ c.nombre }}</li>
-    {% endfor %}
-
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Dirección</td>
+                <td>Nit</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in data %}
+                <tr>
+                    <td>{{ c.idColegio }}</td>
+                    <td>{{ c.nombre }}</td>
+                    <td>{{ c.direccion }}</td>
+                    <td>{{ c.nit }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'colegio_edit' c.idColegio %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'colegio_delete' c.idColegio %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     {% else %}
     <h4>No hay registros de colegios</h4>
     {% endif %}
