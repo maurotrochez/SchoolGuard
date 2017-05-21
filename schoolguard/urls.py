@@ -30,6 +30,8 @@ urlpatterns = [
     url(r'^estudiante/', include('estudiante.urls'), name='estudiante'),
     url(r'^vehiculo/', include('vehiculo.urls'), name='vehiculo'),
     url(r'^documentosVehiculo/', include('documentosVehiculo.urls'), name='documentosVehiculo'),
+    url(r'^api/', include('geo.api.urls'), name='api'),
+
 ]
 
 if settings.DEBUG:
