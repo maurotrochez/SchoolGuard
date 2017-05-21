@@ -3,17 +3,40 @@
 Conductores
 {% endblock %}
 {% block content %}
-
-    {% if data %}
-    {% for c in data %}
-        <li>{{ c.nombre }}</li>
-    {% endfor %}
-
-    {% else %}
-    <h4>No hay registros de conductores</h4>
-    {% endif %}
-	<hr>
+    <h3>Conductores</h3>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <td>Cedula</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Licencia conductor</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+    <tbody>
+        {% if data %}
+        {% for u in data%}
+            <tr>
+                <td>{{ u.idConductor }}</td>
+                <td>{{ u.nombre }}</td>
+                <td>{{ u.apellido }}</td>
+                <td>{{ u.paseConduccion }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'conductor_edit' u.idConductor %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'conductor_delete' u.idConductor %}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <h1>No hay registros de conductores</h1>
+        {% endif %}
+    </tbody>
+    </table>
+ </div>
+    <hr>
     <p>
-        <a href="{% url "create_conductor" %}" class="btn btn-primary">Create new conductor</a>
+        <a href="{% url "create_conductor" %}" class="btn btn-primary">Crear un nuevo conductor</a>
     </p>
 {% endblock %}

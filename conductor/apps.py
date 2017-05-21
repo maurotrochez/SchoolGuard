@@ -1,5 +1,5 @@
-from django.apps import AppConfig
+#from django.apps import AppConfig
 
 
-class ConductorConfig(AppConfig):
-    name = 'conductor'
+#class ConductorConfig(AppConfig):
+#    name = 'conductor'

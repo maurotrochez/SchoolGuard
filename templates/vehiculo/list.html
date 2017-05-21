@@ -1,19 +1,60 @@
 {% extends "base.html" %}
 {% block head_title %}
-Vehiculo
+Conductores
 {% endblock %}
 {% block content %}
-
-    {% if data %}
-    {% for c in data %}
-        <li>{{ c.placa }}</li>
-    {% endfor %}
-
-    {% else %}
-    <h4>No hay registros de vehiculo</h4>
-    {% endif %}
-	<hr>
+    <h3>Vehiculos</h3>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <td>#</td>
+            <td>Conductor</td>
+            <td>Placa</td>
+            <td>Marca</td>
+            <td>Linea</td>
+            <td>Modelo</td>
+            <td>Cilindraje</td>
+            <td>Color</td>
+            <td>Clase</td>
+            <td>Tipo</td>
+            <td>Serie</td>
+            <td>Nombre Propietarios</td>
+            <td>Cedula Propietario</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+    <tbody>
+        {% if data %}
+        {% for u in data%}
+            <tr>
+                <td>{{ u.idVehiculo }}</td>
+                <td>{{ u.conductor }}</td>
+                <td>{{ u.placa }}</td>
+                <td>{{ u.marca }}</td>
+                <td>{{ u.linea }}</td>
+                <td>{{ u.modelo }}</td>
+                <td>{{ u.cilindraje }}</td>
+                <td>{{ u.color }}</td>
+                <td>{{ u.clase }}</td>
+                <td>{{ u.tipo }}</td>
+                <td>{{ u.serie }}</td>
+                <td>{{ u.nombre }}</td>
+                <td>{{ u.cedula }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'vehiculo_edit' u.idVehiculo %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'vehiculo_delete' u.idVehiculo %}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <h1>No hay registros de vehiculo</h1>
+        {% endif %}
+    </tbody>
+    </table>
+    </div>
+    <hr>
     <p>
-        <a href="{% url "create_vehiculo" %}" class="btn btn-primary">Create new student</a>
+        <a href="{% url "create_vehiculo" %}" class="btn btn-primary">Create un nuevo vehiculo</a>
     </p>
 {% endblock %}

@@ -4,6 +4,7 @@ Users
 {% endblock %}
 {% block content %}
     <h3>Usuarios</h3>
+<div class="table-responsive">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -35,6 +36,7 @@ Users
         {% endif %}
     </tbody>
     </table>
+</div>
     <hr>
     <p>
         <a href="{% url "register" %}" class="btn btn-primary">Crear nuevo usuario</a>
