@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block head_title %}
-Crear ruta
+Crear dispositivo
 {% endblock %}
 {% block content %}
-    <h3>Crear ruta</h3>
+    <h3>Crear dispositivo</h3>
     <form action="" method="post">
-       {{ route_form|crispy }}
+       {{ device_form|crispy }}
         {% csrf_token %}
         <p><input type="submit" class="btn btn-primary" value="Guardar"></p>
     </form>

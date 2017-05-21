@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block head_title %}
+    Dispositivos
+{% endblock %}
+{% block content %}
+    <h3>Dispositivos</h3>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Codigo</td>
+            <td>Nombre</td>
+            <td>Vehiculo</td>
+            <td>Acciones</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% if data %}
+            {% for u in data %}
+                <tr>
+                    <td>{{ u.id }}</td>
+                    <td>{{ u.code }}</td>
+                    <td>{{ u.name }}</td>
+                    <td>{{ u.vehicle.nombre }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'edit_device' u.id %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'delete_device' u.id %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <h3>No hay registros de dispositivos</h3>
+        {% endif %}
+        </tbody>
+    </table>
+    <hr>
+    <p>
+        <a href="{% url "create_device" %}" class="btn btn-primary">Crear nuevo dispositivo</a>
+    </p>
+{% endblock %}
