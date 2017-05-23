@@ -24,10 +24,7 @@ class DocumentosVehiculoForm(forms.ModelForm):
             'fechaExpedicion': 'fecha de expedición',
             'fechaVencimiento': 'fecha de vencimiento',
         }
-        # widgets = {
-        #     'fechaExpedicion': forms.DateTimeInput(attrs={'class': 'datetime-input'}),
-        #     'fechaVencimiento': DateInput(attrs={
-        #         'class': 'datepicker',
-        #         'data-date-format': 'yyyy/mm/dd',
-        #     }),
-        # }
+        widgets = {
+            'fechaExpedicion': forms.TextInput(attrs={'type': 'date'}),
+            'fechaVencimiento': forms.TextInput(attrs={'type': 'date'})
+        }
