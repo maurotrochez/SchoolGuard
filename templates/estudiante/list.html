@@ -5,7 +5,9 @@ Estudiantes
 {% block content %}
 
     {% if data %}
-    <table class="table table-bordered">
+    <h3>Estudiantes</h3>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <td>#</td>
@@ -30,6 +32,7 @@ Estudiantes
             {% endfor %}
         </tbody>
     </table>
+</div>
     {% else %}
     <h4>No hay registros de estudiantes</h4>
     {% endif %}

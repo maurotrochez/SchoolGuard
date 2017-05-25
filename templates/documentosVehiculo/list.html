@@ -5,10 +5,36 @@ Documentos
 {% block content %}
 
     {% if data %}
-    {% for c in data %}
-        <li>{{ c.tipoDocumento }}</li>
-    {% endfor %}
-
+    <h3>Documentos</h3>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Tipo Documento</td>
+                <td>Fecha Expedición</td>
+                <td>Fecha Vencimiento</td>
+                <td>Vehiculo</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in data %}
+                <tr>
+                    <td>{{ c.idDocumentosVehiculo }}</td>
+                    <td>{{ c.tipoDocumento }}</td>
+                    <td>{{ c.fechaExpedicion }}</td>
+                    <td>{{ c.fechaVencimiento }}</td>
+                    <td>{{ c.vehiculo }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'documentosVehiculo_edit' c.idDocumentosVehiculo %}">Editar</a>
+                        <a class="btn btn-danger" href="{% url 'documentosVehiculo_delete' c.idDocumentosVehiculo %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
     {% else %}
     <h4>No hay registros de documentos</h4>
     {% endif %}

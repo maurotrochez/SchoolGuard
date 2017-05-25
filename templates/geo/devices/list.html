@@ -4,7 +4,10 @@
 {% endblock %}
 {% block content %}
     <h3>Dispositivos</h3>
-    <table class="table table-bordered">
+
+    {% if data %}
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
         <thead>
         <tr>
             <td>#</td>
@@ -15,7 +18,6 @@
         </tr>
         </thead>
         <tbody>
-        {% if data %}
             {% for u in data %}
                 <tr>
                     <td>{{ u.id }}</td>
@@ -28,11 +30,13 @@
                     </td>
                 </tr>
             {% endfor %}
-        {% else %}
-            <h3>No hay registros de dispositivos</h3>
-        {% endif %}
-        </tbody>
+            </tbody>
     </table>
+</div>
+    {% else %}
+        <h3>No hay registros de dispositivos</h3>
+    {% endif %}
+
     <hr>
     <p>
         <a href="{% url "create_device" %}" class="btn btn-primary">Crear nuevo dispositivo</a>

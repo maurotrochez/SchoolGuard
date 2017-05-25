@@ -5,7 +5,9 @@ Colegios
 {% block content %}
 
     {% if data %}
-    <table class="table table-bordered">
+    <h3>Colegios</h3>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <td>#</td>
@@ -30,6 +32,7 @@ Colegios
             {% endfor %}
         </tbody>
     </table>
+</div>
     {% else %}
     <h4>No hay registros de colegios</h4>
     {% endif %}

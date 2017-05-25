@@ -16,3 +16,4 @@ class EstudianteForm(forms.ModelForm):
         labels = {
             'idEstudiante': 'Codigo',
         }
+

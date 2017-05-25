@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block head_title %}
-Conductores
+Vehiculos
 {% endblock %}
 {% block content %}
     <h3>Vehiculos</h3>
+
+        {% if data %}
 <div class="table-responsive">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
             <td>#</td>
@@ -24,8 +26,7 @@ Conductores
             <td>Acciones</td>
         </tr>
         </thead>
-    <tbody>
-        {% if data %}
+        <tbody>
         {% for u in data%}
             <tr>
                 <td>{{ u.idVehiculo }}</td>
@@ -47,12 +48,13 @@ Conductores
                 </td>
             </tr>
         {% endfor %}
+            </tbody>
+    </table>
+    </div>
         {% else %}
             <h1>No hay registros de vehiculo</h1>
         {% endif %}
-    </tbody>
-    </table>
-    </div>
+
     <hr>
     <p>
         <a href="{% url "create_vehiculo" %}" class="btn btn-primary">Create un nuevo vehiculo</a>
