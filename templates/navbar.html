@@ -1,32 +1,32 @@
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar label-primary navbar-static-top">
 
           <div class="container">
             <div class="navbar-header">
+				
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-
-              <a class="navbar-brand" href="{% url 'home' %}">School Guard</a>
-
+				<a class="navbar-brand hidden-xs" href="#"><img src="{% url 'home' %}static/images/logo.png" height="350%" style="margin-left: -34.5px; margin-top: -7px;"></a>
+              <a class="navbar-brand fontWitheStyle" href="{% url 'home' %}">School Guard</a>
 
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'list_users' %}">Users</a></li>
-                <li><a href="{% url 'list_routes' %}">Routes</a></li>
-                <li><a href="{% url 'list_conductors' %}">Conductores</a></li>
-                <li><a href="{% url 'list_colegios' %}">Colegios</a></li>
-                <li><a href="{% url 'list_estudiantes' %}">Estudiantes</a></li>
-                <li><a href="{% url 'list_vehiculo' %}">Vehiculo</a></li>
-                <li><a href="{% url 'list_documentosVehiculo' %}">Documento Vehiculo</a></li>
-                <li><a href="{% url 'list_devices' %}">Dispositivos</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="nav navbar-nav" >
+                <li><a class="fontWitheStyle" href="{% url 'home' %}">Home</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_users' %}">Users</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_routes' %}">Rutas</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_conductors' %}">Conductores</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_colegios' %}">Colegios</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_estudiantes' %}">Estudiantes</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_vehiculo' %}">Vehiculo</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_documentosVehiculo' %}">Documento Vehiculo</a></li>
+                <li><a class="fontWitheStyle" href="{% url 'list_devices' %}">Dispositivos</a></li>
+                <li class="dropdown ">
+                  <a href="#" class="dropdown-toggle fontWitheStyle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>
