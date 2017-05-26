@@ -26,8 +26,11 @@ Usuarios
                 <td>{{ u.last_name }}</td>
                 <td>{{ u.email }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{% url 'user_edit' u.id %}">Editar</a>
-                    <a class="btn btn-danger" href="{% url 'user_delete' u.id %}">Eliminar</a>
+                    <center>
+                        <a title="Editar" class="btn btn-primary" href="{% url 'user_edit' u.id %}"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a title="Eliminar" class="btn btn-danger" href="{% url 'user_delete' u.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+                    </center>
+
                 </td>
             </tr>
         {% endfor %}

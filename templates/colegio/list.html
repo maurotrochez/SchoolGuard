@@ -25,8 +25,10 @@ Colegios
                     <td>{{ c.direccion }}</td>
                     <td>{{ c.nit }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'colegio_edit' c.idColegio %}">Editar</a>
-                        <a class="btn btn-danger" href="{% url 'colegio_delete' c.idColegio %}">Eliminar</a>
+                        <center>
+                            <a title="Editar" class="btn btn-primary" href="{% url 'colegio_edit' c.idColegio %}"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a title="Eliminar" class="btn btn-danger" href="{% url 'colegio_delete' c.idColegio %}"><span class="glyphicon glyphicon-trash"></span></a>
+                        </center>
                     </td>
                 </tr>
             {% endfor %}

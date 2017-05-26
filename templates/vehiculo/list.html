@@ -43,8 +43,10 @@ Vehiculos
                 <td>{{ u.nombre }}</td>
                 <td>{{ u.cedula }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{% url 'vehiculo_edit' u.idVehiculo %}">Editar</a>
-                    <a class="btn btn-danger" href="{% url 'vehiculo_delete' u.idVehiculo %}">Eliminar</a>
+                    <center>
+                            <a title="Editar" class="btn btn-primary" href="{% url 'vehiculo_edit' u.idVehiculo %}"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a title="Eliminar" class="btn btn-danger" href="{% url 'vehiculo_delete' u.idVehiculo %}"><span class="glyphicon glyphicon-trash"></span></a>
+                    </center>
                 </td>
             </tr>
         {% endfor %}

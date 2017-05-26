@@ -25,8 +25,10 @@
                     <td>{{ u.name }}</td>
                     <td>{{ u.vehicle.nombre }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'edit_device' u.id %}">Editar</a>
-                        <a class="btn btn-danger" href="{% url 'delete_device' u.id %}">Eliminar</a>
+                    <center>
+                            <a title="Editar" class="btn btn-primary" href="{% url 'edit_device' u.id %}"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a title="Eliminar" class="btn btn-danger" href="{% url 'delete_device' u.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+                    </center>
                     </td>
                 </tr>
             {% endfor %}

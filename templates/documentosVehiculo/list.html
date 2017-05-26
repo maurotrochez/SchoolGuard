@@ -27,8 +27,10 @@ Documentos
                     <td>{{ c.fechaVencimiento }}</td>
                     <td>{{ c.vehiculo }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'documentosVehiculo_edit' c.idDocumentosVehiculo %}">Editar</a>
-                        <a class="btn btn-danger" href="{% url 'documentosVehiculo_delete' c.idDocumentosVehiculo %}">Eliminar</a>
+                        <center>
+                            <a title="Editar" class="btn btn-primary" href="{% url 'documentosVehiculo_edit' c.idDocumentosVehiculo %}"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a title="Eliminar" class="btn btn-danger" href="{% url 'documentosVehiculo_delete' c.idDocumentosVehiculo %}"><span class="glyphicon glyphicon-trash"></span></a>
+                        </center>
                     </td>
                 </tr>
             {% endfor %}
