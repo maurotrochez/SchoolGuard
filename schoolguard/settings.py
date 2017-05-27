@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -93,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'schoolguard',
         'USER': 'root',
-        'PASSWORD': '12345',
+        'PASSWORD': 'MatiVelasquez0922',
         'HOST': 'localhost',
         'PORT': '3306'
     }
@@ -140,6 +141,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_pro', 'static')
 ]
+LOGIN_URL = reverse_lazy('login');
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_URL = reverse_lazy('logout')
+
 
 GOOGLE_MAP_API_KEY = "AIzaSyDMdeTRYdZ-q3-Q8JyHEw8wrV8rbGQZuBE"
 

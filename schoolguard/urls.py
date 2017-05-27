@@ -18,10 +18,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from account.views import home
+from django.contrib.auth.views import login
+from django.contrib.auth.views import logout_then_login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name='home'),
+    url(r'^home', home, name='home'),
     url(r'^account/', include('account.urls'), name='account'),
     url(r'^geo/', include('geo.urls'), name='geo'),
     # url(r'^account/hello', hello, name='hello'),
@@ -31,6 +33,8 @@ urlpatterns = [
     url(r'^vehiculo/', include('vehiculo.urls'), name='vehiculo'),
     url(r'^documentosVehiculo/', include('documentosVehiculo.urls'), name='documentosVehiculo'),
     url(r'^api/', include('geo.api.urls'), name='api'),
+    url(r'^$', login,{'template_name':'index.html'}, name='login'),
+    url(r'^cerrar/$', logout_then_login, name='logout'),
 
 ]
 
