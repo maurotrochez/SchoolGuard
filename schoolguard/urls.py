@@ -21,6 +21,7 @@ from account.views import home
 from django.contrib.auth.views import login
 from django.contrib.auth.views import logout_then_login
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^home', home, name='home'),

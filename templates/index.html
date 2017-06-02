@@ -7,7 +7,16 @@ Usuarios
 {% endblock %}
 {% block content %}
 
-<a title="Entrar" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-lock">&nbsp;Iniciar</span></a>
+<div class="contenedor">
+	<a title="Entrar" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-lock">&nbsp;Iniciar</span></a>
+
+				<div STYLE="position:absolute; top:36px; left:240px; visibility:visible z-index:1">
+					<image height="800" src="{% url 'home' %}/../static/images/mapa.png" xlink:href="100%" width="100%" width="800"class="img-responsive"/>
+				</div>
+				<div STYLE="position:absolute; top:36px; left:240px; visibility:visible z-index:1">
+					<IMG height="800" src="{% url 'home' %}/../static/images/logo.png" width="800" class="img-responsive">
+				</div>
+</div>
 
 <div id="myModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">-->
@@ -21,6 +30,7 @@ Usuarios
 		  <div class="modal-body">
 			<p>Ingrese datos para iniciar</p>
 		  </div>
+
 
 
 			<form method="post">
@@ -57,7 +67,7 @@ Usuarios
 					</div>
 			</form>
 
-		  
+
 		</div>
 
 	  </div>
