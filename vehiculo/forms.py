@@ -23,6 +23,6 @@ class VehiculoForm(forms.ModelForm):
             'cedula',
         ]
         labels = {
-            'nombre':'nombre propietario',
-            'cedula': 'cedula propietario',
+            'nombre':'Nombre propietario',
+            'cedula': 'Cedula propietario',
         }

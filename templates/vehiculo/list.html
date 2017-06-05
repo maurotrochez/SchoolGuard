@@ -3,8 +3,6 @@
 Vehiculos
 {% endblock %}
 {% block content %}
-    <h3>Vehiculos</h3>
-
         {% if data %}
 <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -54,11 +52,11 @@ Vehiculos
     </table>
     </div>
         {% else %}
-            <h1>No hay registros de vehiculo</h1>
+            <h4>No hay registros de vehiculo</h4>
         {% endif %}
 
     <hr>
     <p>
-        <a href="{% url "create_vehiculo" %}" class="btn btn-primary">Create un nuevo vehiculo</a>
+        <a href="{% url "create_vehiculo" %}" class="btn btn-primary">Crear nuevo vehiculo</a>
     </p>
 {% endblock %}

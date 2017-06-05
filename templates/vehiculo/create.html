@@ -4,10 +4,10 @@
 Create vehiculo
 {% endblock %}
 {% block content %}
-    <h3>Crear a Vehiculo</h3>
+    <h3>Crear Vehiculo</h3>
     <form action="" method="post">
        {{ vehiculo_form|crispy }}
         {% csrf_token %}
-        <p><input type="submit" class="btn btn-primary" value="Save"></p>
+        <p><input type="submit" class="btn btn-primary" value="Guardar"></p>
     </form>
 {% endblock %}

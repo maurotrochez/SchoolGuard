@@ -4,10 +4,10 @@ Register
 {% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h3>Create a conductor</h3>
+    <h3>Crear conductor</h3>
     <form action="" method="post">
        {{ conductor_form|crispy }}
         {% csrf_token %}
-        <p><input type="submit" class="btn btn-primary" value="Save"></p>
+        <p><input type="submit" class="btn btn-primary" value="Guardar"></p>
     </form>
 {% endblock %}
